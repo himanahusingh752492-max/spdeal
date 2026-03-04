@@ -1,4 +1,4 @@
-//import logo from './logo.svg';
+
 import React,{useState} from 'react';
 import { useLocation } from "react-router-dom";
 import './App.css';
@@ -15,7 +15,7 @@ import Review from './review';
 import Login from './login';
 import Register from './register';
 import Contact from './contact';
-// import SearchPage from "./SearchPage";
+
 import SearchPage from './search';
   
 
@@ -239,30 +239,7 @@ const router = createBrowserRouter([
   return (
     <RouterProvider router={router} />
     
-//     <div>
-//      <div className="App">
-//     <Header/>
-//     </div>
 
-//      <div className="upperbody">
-//    <Collection/>
-
-// <Container fluid className='body'>
-//   <Container>
-//     <Row>
-//       {blog.map((v, i) => (
-//         <Body pitem={v} key={i} />
-//       ))}
-//     </Row>
-//   </Container>
-// </Container>
- 
-//     </div>
-//   <div className="Footer">
-//    <Footer/>
-//     </div>
-    
-// </div>
   
   );
 }
