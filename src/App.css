@@ -37,14 +37,15 @@
   }
 } */
 
-.Body{
+.body{
    margin: 0;
             font-family: Arial, sans-serif;
              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            background: #7e7d7d;
-            color: #333;
+            background: #1e293b;
+          
             width: 100%;
-}
+          
+} 
 
 .App{
     background: #1e88e5;
@@ -64,8 +65,17 @@
               position: fixed;
           bottom: 0;
            width: 100%;
-           
+        
+          
 }
+ .Body{
+  transition: 0.3s ease;
+            transform: translateY(0px);
+           }
+
+ .Body:hover{
+            transform: translateY(6px);
+           }
 /* .body{
   /* width: 23%;
 } */
@@ -77,3 +87,11 @@
     width: 1000px;
   }
  */ 
+.phonediv{
+  color: rgb(226, 242, 255);
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  margin: 10px;
+
+}

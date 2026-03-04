@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #0f1b2d;
+}
+
+/* Full screen center */
+.register-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card */
+.register-box {
+  background: #1c2a3a;
+  padding: 40px;
+  width: 420px;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Titles */
+.brand-title {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.register-heading {
+  text-align: center;
+  color: #cbd5e1;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+/* Inputs */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.input-group label {
+  margin-bottom: 6px;
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+.input-group input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background: #0f1b2d;
+  color: white;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #22c55e;
+}
+
+/* Button */
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #16a34a;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.register-btn:hover {
+  background-color: #15803d;
+}
+
+/* Extra links */
+.extra-links {
+  text-align: center;
+  margin-top: 15px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.extra-links span {
+  color: #22c55e;
+  cursor: pointer;
+}
