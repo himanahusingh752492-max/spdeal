@@ -1,7 +1,9 @@
-import React from "react";
+import React,{useEffect} from "react";
 import "./review.css";
+import { useNavigate } from "react-router-dom";
 
 function Review() {
+
   return (
     <div className="review-wrapper">
       <h1 className="review-title">Customer Reviews</h1>

@@ -1,5 +1,5 @@
 
-import React,{useState} from 'react';
+import React,{useState,useContext, createContext} from 'react';
 import { useLocation } from "react-router-dom";
 import './App.css';
 import Header from './fooder';
@@ -15,11 +15,15 @@ import Review from './review';
 import Login from './login';
 import Register from './register';
 import Contact from './contact';
-
+import ProfilePageDark from './profile'
 import SearchPage from './search';
-  
+import ProtectedRoute  from './ProtectedRoute'; 
+export const MyContext=createContext()
 
 function App() {
+  const [name,setname]=useState('User')
+  const [password,setpassword]=useState('')
+    const [email,setemail]=useState('')
 const router = createBrowserRouter([
 
 
@@ -51,11 +55,29 @@ const router = createBrowserRouter([
 </div>
   ),
   },
+  {
+  path: "*",
+  element: (
+    <div style={{ padding: "50px", textAlign: "center" }}>
+      <h1>404 - Page Not Found 😅</h1>
+      <p>The page you are looking for does not exist.</p>
+      <a href="/home">Go back Home</a>
+    </div>
+  ),
+},
+// {
+//   path: "/profile",
+//   element: <ProfilePageDark/>
+// },
 
   {
     path: "/review",
-    element: <Review/>,
+    element: (
+      <ProtectedRoute>
+      <Review/>
+      </ProtectedRoute>)
   },
+
   {
     path: "/body",
     element: <Body/>,
@@ -64,13 +86,18 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login/>,
   },
+  
   {
     path:"/register",
-    element: <Register/>
+    element: (
+      <ProtectedRoute>
+    <Register/>
+    </ProtectedRoute>)
   },
 {
   path: "/phones",
   element: (
+    <ProtectedRoute>
     <div>
       <div className="App">
         <Header />
@@ -94,11 +121,13 @@ const router = createBrowserRouter([
         </Container>
       </div>
     </div>
+    </ProtectedRoute>
   ),
 },
 {
   path: "/laptops",
   element: (
+    <ProtectedRoute>
     <div>
       <div className="App">
         <Header />
@@ -122,11 +151,13 @@ const router = createBrowserRouter([
         </Container>
       </div>
     </div>
+    </ProtectedRoute>
   ),
 },
 {
   path: "/tv",
   element: (
+    <ProtectedRoute>
     <div>
       <div className="App">
         <Header />
@@ -150,11 +181,13 @@ const router = createBrowserRouter([
         </Container>
       </div>
     </div>
+    </ProtectedRoute>
   ),
 },
 {
   path: "/ac",
   element: (
+    <ProtectedRoute>
     <div>
       <div className="App">
         <Header />
@@ -178,11 +211,13 @@ const router = createBrowserRouter([
         </Container>
       </div>
     </div>
+    </ProtectedRoute>
   ),
 },
 {
   path: "/electronics",
   element: (
+    <ProtectedRoute>
     <div>
       <div className="App">
         <Header />
@@ -206,6 +241,7 @@ const router = createBrowserRouter([
         </Container>
       </div>
     </div>
+    </ProtectedRoute>
   ),
 },
 {
@@ -230,15 +266,16 @@ const router = createBrowserRouter([
 
   {
     path:"/contact",
-    element: <Contact/>
+    element: (<ProtectedRoute><Contact/></ProtectedRoute>)
 
   },
   {
   }
 ]);
   return (
+   < MyContext.Provider value ={{name,setname ,password,setpassword,email,setemail}} >
     <RouterProvider router={router} />
-    
+    </MyContext.Provider>
 
   
   );

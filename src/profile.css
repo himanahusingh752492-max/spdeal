@@ -1,0 +1,102 @@
+/* General Dark Background */
+.dark-body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Header Dark */
+.header-dark {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #1f1f1f;
+  border-bottom: 2px solid #333;
+}
+
+.brand-dark {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00bfff;
+}
+
+.greeting-dark {
+  font-size: 18px;
+}
+
+.username-dark {
+  font-weight: bold;
+  color: #00bfff;
+}
+
+/* Profile Card Dark */
+.profile-card-dark {
+  max-width: 400px;
+  background-color: #1f1f1f;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  text-align: center;
+}
+
+.profile-pic-dark {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 2px solid #00bfff;
+}
+
+.username-large-dark {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.email-dark {
+  font-size: 14px;
+  color: #aaaaaa;
+  margin-bottom: 20px;
+}
+
+/* Stats Dark */
+.stats-dark {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.stat-number-dark {
+  font-size: 18px;
+  font-weight: bold;
+  color: #00bfff;
+}
+
+.stat-label-dark {
+  font-size: 12px;
+  color: #bbbbbb;
+}
+
+/* Actions Dark */
+.actions-dark .btn-edit-dark,
+.actions-dark .btn-logout-dark {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-edit-dark {
+  background-color: #00bfff;
+  color: #121212;
+}
+
+.btn-logout-dark {
+  background-color: #ff4d4f;
+  color: #ffffff;
+}
