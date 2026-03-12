@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import  axios  from "axios";
 import { useNavigate } from "react-router-dom"; 
 function Register() {
+  const earning=0
 const { name, setname } = useContext(MyContext);
 const { password, setpassword} = useContext(MyContext);
 const { email, setemail} = useContext(MyContext);
@@ -18,6 +19,7 @@ const navigate = useNavigate();
         name,
         email,
         password,
+        earning
       });
       console.log("Server Response:", res.data);
      

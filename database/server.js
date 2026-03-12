@@ -28,7 +28,7 @@ app.get("/register", (req, res) => {
 app.post("/register", async (req,res)=>{
 
 try{
-const {name,email,password}=req.body
+const {name,email,password,earning}=req.body
  const user = await User.findOne({email:email})
  if(user){
 return res.status(500).send({message:"email exists"});
@@ -46,7 +46,7 @@ res.status(500).send(err);
 }
 
 });
-app.get("/logout",(req,res)=>{
+app.post("/logout",(req,res)=>{
 
 res.clearCookie("user");
 
@@ -63,7 +63,7 @@ app.post("/login", async (req, res) => {
   
   //  res.json(user);
   console.log(user)
-  
+  // res.json(user)
   console.log(req.body)
       if(!user){
   return res.send({message:"User not found"});
@@ -77,7 +77,7 @@ if(user.password !== password){
       maxAge:86400000
     })
  res.send({success:true,message:"login successfully"})
-
+// res.json(user);
 });
 
 
@@ -123,7 +123,23 @@ app.get("/contact", auth,(req, res) => {
   res.send("Register API working");
 });
 
+app.get("/user", async (req,res)=>{
 
+const id = req.cookies.user;
+
+if(!id){
+ return res.json(null);
+}
+
+const user = await User.findById(id);
+
+res.json(user);
+
+});
+app.get("/profile", auth,(req, res) => {
+
+  res.send("Register API working");
+});
 
 app.listen(4000,()=>{
 console.log("Server running on port 4000");

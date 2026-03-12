@@ -45,7 +45,7 @@ href: "https://amzn.to/3MgFqN1"
   href: "https://amzn.to/3MgFqN1"
   },  
     {
-    name: "phones",
+    name: "phone",
     id: 6,
     kind: "Samsung Galaxy M56 5G Mobile (Light Green, 8GB RAM, 256GB Storage) | Segment's Slimmest | Gorilla Glass Victus+ | 10 Bit HDR Video | 50MP Camera | AI | Vapour Cooling Chamber | Lag-free Gaming | Without Charger",
     pricea: "₹29,999",
@@ -54,7 +54,7 @@ href: "https://amzn.to/3MgFqN1"
     href: "https://amzn.to/3MNO345"
   },
   {
-    name: "phones",
+    name: "phone",
     id: 7,
     kind: "Redmi Note 14 Pro 5G Phantom Purple 8GB RAM 128GB Storage | 50 MP Sony Camera Setup | Corning Gorilla Glass Victus 2 | 1.5K 3D Curved AMOLED | Mediatek Dimensity 7300 Ultra",
     pricea: "₹24,999",

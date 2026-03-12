@@ -11,26 +11,20 @@ function Header() {
   const [ name1, setname1 ] = useState('');
   const { password, setpassword } = useContext(MyContext);
    const { email, setemail} = useContext(MyContext);
-// useEffect(() => {
-//   const fetchUser = async () => {
-//     try {
-//       const res = await fetch("http://localhost:4000/login", { credentials: "include" });
+useEffect(() => {
 
-//       const contentType = res.headers.get("content-type");
-//       if (!contentType || !contentType.includes("application/json")) {
-//         throw new Error("Server did not return JSON");
-//       }
+  const fetchUser = async () => {
+    const res = await fetch("http://localhost:4000/user", {
+      credentials: "include"
+    });
 
-//       const user = await res.json();
-//       setname1(user?.name || "Guest");
-//     } catch (err) {
-//       console.log("Error fetching user:", err);
-//       setname1("Guest");
-//     }
-//   };
+    const data = await res.json();
+    setname1(data);
+  };
 
-//   fetchUser();
-// }, []);
+  fetchUser();   
+
+}, []);
   const [value, setvalue] = useState("");
   const navigate = useNavigate();
  
@@ -52,7 +46,7 @@ function Header() {
     justifyContent: "space-between",
     alignItems: "center",
     padding: "10px 20px",
-    backgroundColor: "#0f172a",
+    backgroundColor: "#2563EB",
     color: "white",
     fontSize: "16px",
     fontWeight: "bold",
@@ -68,11 +62,11 @@ function Header() {
     transition: "color 0.3s",
   };
 
-  // Navigation container
+ 
   const navStyle = {
     display: "flex",
     width: "100%",
-    backgroundColor: "#1e293b", // you can change it to match your theme
+    backgroundColor: "#1e293b", 
     justifyContent: "space-between",
     flexWrap: "wrap",
     padding: "10px 20px",
@@ -93,7 +87,7 @@ navigate("/login");
 }
   return (
     <div style={wrap}>
-      <h2 style={linkStyle}>SmartPick Deals-  <span style={{ color: "#facc15", fontSize: "25px", }} >Welcome,{name1}! </span></h2>
+      <h2 style={linkStyle}>SmartPick Deals-  <span style={{ color: "#facc15", fontSize: "25px", }} >Welcome,{name1 ? name1.name : "Guest"}! </span></h2>
       <div style={{ width: "400px" }}>   <form onSubmit={handleSearch}><input type="search" name="search" id="search" value={value} onChange={(e) => setvalue(e.target.value)} placeholder="Search..." style={{ ...searchStyle, padding: "5px 10px", borderRadius: "5px 0 0 5px", border: "1px solid black", width: "80%" }} /> <input type="submit" value="Search" style={{ ...searchStyle, padding: "5px 10px", borderRadius: "0 5px 5px 0", border: "1px solid black", color: "white", backgroundColor: "#04060bff" }} /> </form></div>
       {/* Navigation */}
 
@@ -103,9 +97,7 @@ navigate("/login");
           <Link style={linkStyle} to="/review">Reviews</Link>
           <Link style={linkStyle} to="/top">Top Deals</Link>
           <Link style={linkStyle} to="/contact">Contact</Link>
-       <a href="#" style={linkStyle} onClick={logout}>
-  Logout
-</a>
+            <Link style={linkStyle} to="/profile">Profile</Link>
         </nav>
       </div>
     </div>

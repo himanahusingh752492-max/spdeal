@@ -65,10 +65,7 @@ const router = createBrowserRouter([
     </div>
   ),
 },
-// {
-//   path: "/profile",
-//   element: <ProfilePageDark/>
-// },
+
 
   {
     path: "/review",
@@ -77,7 +74,13 @@ const router = createBrowserRouter([
       <Review/>
       </ProtectedRoute>)
   },
-
+  {
+    path: "/profile",
+    element: (
+      <ProtectedRoute>
+      <ProfilePageDark/>
+      </ProtectedRoute>)
+  },
   {
     path: "/body",
     element: <Body/>,
@@ -90,9 +93,9 @@ const router = createBrowserRouter([
   {
     path:"/register",
     element: (
-      <ProtectedRoute>
+      
     <Register/>
-    </ProtectedRoute>)
+   )
   },
 {
   path: "/phones",
