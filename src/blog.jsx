@@ -1,6 +1,7 @@
 export let blog = [
   {
     name:"phone",
+    name1:"iPhone 17 Pro Max 256 GB",
     kind: "iPhone 17 Pro Max 256 GB: 17.42 cm (6.9″) Display with Promotion, A19 Pro Chip, Best Battery Life in Any iPhone Ever, Pro Fusion Camera System",
     id: 1,
     pricea:"₹1,49,900",

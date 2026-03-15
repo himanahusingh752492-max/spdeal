@@ -14,7 +14,7 @@ credentials:"include"
 });
 
 const user = await res.json();
-console.log(user)
+console.log(user);
 setData(user);
 
 }
@@ -53,7 +53,7 @@ className="profile-pic-dark"
 <h2 className="username-large-dark">{data?.name}</h2>
 
 <p className="email-dark">{data?.email}</p>
-<p className="email-dark">Totalearning: {data?.earning}</p>
+{/* <p className="email-dark">Totalearning: {dat}</p> */}
 {/* 
 <div className="stats-dark">
 

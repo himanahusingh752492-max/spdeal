@@ -85,7 +85,7 @@ app.get("/home", async(req, res) => {
 
   res.send("Register API working");
 });
-app.get("/review", auth, (req, res) => {
+app.get("/campare", auth, (req, res) => {
  console.log("Register API working");
   res.send("Register API working");
 });
@@ -140,7 +140,14 @@ app.get("/profile", auth,(req, res) => {
 
   res.send("Register API working");
 });
+app.get("/compare", (req, res) => {
 
+  res.send("Register API working");
+});
+app.get("/detail/:id", (req, res) => {
+
+  res.send("Register API working");
+});
 app.listen(4000,()=>{
 console.log("Server running on port 4000");
 });

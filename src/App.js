@@ -11,13 +11,15 @@ import Body from './body';
 import {blog} from './blog';
 import { Card, Container,Row,Col,Button } from "react-bootstrap";
 import { createBrowserRouter,RouterProvider } from 'react-router-dom';
-import Review from './review';
+import Compare from './campare';
 import Login from './login';
 import Register from './register';
 import Contact from './contact';
 import ProfilePageDark from './profile'
 import SearchPage from './search';
 import ProtectedRoute  from './ProtectedRoute'; 
+import ProductDetail from './detailPage';
+import ProductDetailWrapper from './ProductDetailWrapper'
 export const MyContext=createContext()
 
 function App() {
@@ -39,7 +41,7 @@ const router = createBrowserRouter([
 
 <Container fluid className='body'>
   <Container>
-    <Row>
+<Row >
       {blog.map((v, i) => (
         <Body pitem={v} key={i} />
       ))}
@@ -49,7 +51,7 @@ const router = createBrowserRouter([
  
     </div>
   <div className="Footer">
-   <Footer/>
+   {/* <Footer/> */}
     </div>
     
 </div>
@@ -65,15 +67,16 @@ const router = createBrowserRouter([
     </div>
   ),
 },
-
-
-  {
-    path: "/review",
-    element: (
-      <ProtectedRoute>
-      <Review/>
-      </ProtectedRoute>)
-  },
+{
+  path: "/campare",
+  element: (
+    <ProtectedRoute>
+      <Header/>
+      <Compare blog={blog}/>
+      <Footer/>
+    </ProtectedRoute>
+  )
+},
   {
     path: "/profile",
     element: (
@@ -81,6 +84,15 @@ const router = createBrowserRouter([
       <ProfilePageDark/>
       </ProtectedRoute>)
   },
+   {
+      path: "/detail/:id",
+element: (
+  <div>
+    <Header />
+    <ProductDetailWrapper />
+  </div>
+)
+    },
   {
     path: "/body",
     element: <Body/>,

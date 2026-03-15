@@ -64,10 +64,11 @@ useEffect(() => {
 
  
   const navStyle = {
-    display: "flex",
-    width: "100%",
-    backgroundColor: "#1e293b", 
-    justifyContent: "space-between",
+display: "flex",
+width: "100%",
+backgroundColor: "#1e293b",
+justifyContent: "center",
+
     flexWrap: "wrap",
     padding: "10px 20px",
     boxSizing: "border-box",
@@ -86,22 +87,65 @@ navigate("/login");
 
 }
   return (
-    <div style={wrap}>
-      <h2 style={linkStyle}>SmartPick Deals-  <span style={{ color: "#facc15", fontSize: "25px", }} >Welcome,{name1 ? name1.name : "Guest"}! </span></h2>
-      <div style={{ width: "400px" }}>   <form onSubmit={handleSearch}><input type="search" name="search" id="search" value={value} onChange={(e) => setvalue(e.target.value)} placeholder="Search..." style={{ ...searchStyle, padding: "5px 10px", borderRadius: "5px 0 0 5px", border: "1px solid black", width: "80%" }} /> <input type="submit" value="Search" style={{ ...searchStyle, padding: "5px 10px", borderRadius: "0 5px 5px 0", border: "1px solid black", color: "white", backgroundColor: "#04060bff" }} /> </form></div>
-      {/* Navigation */}
+  <div style={wrap} className="header-wrap">
 
-      <div style={navStyle}>
-        <nav style={{ display: "flex", gap: "240px", flexWrap: "wrap" }}>
-          <Link style={linkStyle} to="/home">Home</Link>
-          <Link style={linkStyle} to="/review">Reviews</Link>
-          <Link style={linkStyle} to="/top">Top Deals</Link>
-          <Link style={linkStyle} to="/contact">Contact</Link>
-            <Link style={linkStyle} to="/profile">Profile</Link>
-        </nav>
-      </div>
-    </div>
+<h2 style={linkStyle}>
+SmartPick Deals -
+<span style={{ color:"#facc15", fontSize:"20px" }}>
+Welcome,{name1 ? name1.name : "Guest"}!
+</span>
+</h2>
+
+<div className="search-container">
+<form onSubmit={handleSearch} className="search-form">
+
+<input
+type="search"
+id="search"
+value={value}
+onChange={(e)=>setvalue(e.target.value)}
+placeholder="Search..."
+style={{
+...searchStyle,
+padding:"5px 10px",
+borderRadius:"5px 0 0 5px",
+border:"1px solid black",
+width:"70%"
+}}
+/>
+
+<input
+type="submit"
+value="Search"
+style={{
+...searchStyle,
+padding:"5px px",
+borderRadius:"0 5px 5px 0",
+border:"1px solid black",
+color:"white",
+backgroundColor:"#04060bff"
+}}
+/>
+
+</form>
+</div>
+
+<div style={navStyle} >
+
+<nav className="nav-links">
+
+<Link style={linkStyle} to="/home">Home</Link>
+<Link style={linkStyle} to="/campare">Compare</Link>
+<Link style={linkStyle} to="/top">Top Deals</Link>
+<Link style={linkStyle} to="/contact">Contact</Link>
+<Link style={linkStyle} to="/profile">Profile</Link>
+
+</nav>
+
+</div>
+
+</div>
   );
 }
 
-export default Header;
+export default Header; 

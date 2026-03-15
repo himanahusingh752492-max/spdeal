@@ -95,3 +95,29 @@
   margin: 10px;
 
 }
+
+.price-text{
+font-size:14px;
+font-weight:bold;
+color:#F97316;
+margin:0;
+}
+
+/* Mobile only */
+@media (max-width:576px){
+.price-text{
+font-size:7px;
+}
+}
+.product-title{
+font-size:14px;
+color:#1F2937;
+margin-bottom:8px;
+}
+
+/* Mobile */
+@media (max-width:576px){
+.product-title{
+font-size:10px;
+}
+}

@@ -1,0 +1,35 @@
+/* Container */
+.collection-container {
+  display: flex;
+  flex-wrap: wrap; /* allow items to wrap on smaller screens */
+  justify-content: space-between; /* evenly spaced */
+  background-color: #06233fff;
+  color: white;
+  padding: 10px;
+  font-size: 15px;
+  gap: 20px;
+}
+
+/* Main menu links */
+.collection-item {
+  text-decoration: none;
+  color: white; /* enforce white */
+  cursor: pointer;
+  flex: 1 1 120px; /* grow/shrink with min-width */
+  text-align: center;
+}
+
+/* Hover effect */
+.collection-item:hover {
+  color: white;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+ 
+
+  .collection-item {
+    width: 100%;
+    text-align: left;
+  }
+}
